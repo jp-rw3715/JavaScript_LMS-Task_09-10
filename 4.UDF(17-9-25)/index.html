@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>UDF</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-gray-50 flex items-center justify-center min-h-screen p-4">
+    <main class="w-full max-w-2xl bg-white rounded-lg shadow-lg p-8 space-y-6">
+      <h1 class="text-3xl font-extrabold text-center text-blue-600 mb-6">
+        Interactive JS Functions with Inputs
+      </h1>
+
+      <div class="space-y-6">
+        <!-- Addition -->
+        <div>
+          <label class="block font-semibold mb-1 text-gray-700"
+            >Add Two Numbers</label
+          >
+          <input
+            type="number"
+            id="addA"
+            placeholder="Number 1"
+            class="w-1/2 p-2 rounded border border-gray-300"
+          />
+          <input
+            type="number"
+            id="addB"
+            placeholder="Number 2"
+            class="w-1/2 p-2 rounded border border-gray-300"
+          />
+          <button
+            class="mt-2 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded"
+            onclick="calculateAddition()"
+          >
+            Calculate Addition
+          </button>
+        </div>
+
+        <!-- Even or Odd -->
+        <div>
+          <label class="block font-semibold mb-1 text-gray-700"
+            >Check Even or Odd</label
+          >
+          <input
+            type="number"
+            id="evenOddNum"
+            placeholder="Enter a number"
+            class="w-full p-2 rounded border border-gray-300"
+          />
+          <button
+            class="mt-2 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded"
+            onclick="checkEvenOdd()"
+          >
+            Check
+          </button>
+        </div>
+
+        <!-- Square -->
+        <div>
+          <label class="block font-semibold mb-1 text-gray-700"
+            >Square of a Number</label
+          >
+          <input
+            type="number"
+            id="squareNum"
+            placeholder="Enter a number"
+            class="w-full p-2 rounded border border-gray-300"
+          />
+          <button
+            class="mt-2 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded"
+            onclick="calculateSquare()"
+          >
+            Calculate Square
+          </button>
+        </div>
+
+        <!-- Capitalize String -->
+        <div>
+          <label class="block font-semibold mb-1 text-gray-700"
+            >Capitalize a String</label
+          >
+          <input
+            type="text"
+            id="capitalizeStr"
+            placeholder="Enter string"
+            class="w-full p-2 rounded border border-gray-300"
+          />
+          <button
+            class="mt-2 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded"
+            onclick="capitalizeString()"
+          >
+            Capitalize
+          </button>
+        </div>
+      </div>
+
+      <!-- Output -->
+      <div
+        id="result"
+        class="mt-6 p-4 bg-gray-100 rounded font-mono text-gray-900 text-sm min-h-[120px] whitespace-pre-wrap"
+      >
+        Results will appear here...
+      </div>
+
+      <script src="./index.js"></script>
+    </main>
+  </body>
+</html>

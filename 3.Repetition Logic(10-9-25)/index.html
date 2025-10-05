@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Repetition Logic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body class="bg-gray-50 min-h-screen flex items-center justify-center p-4">
+    <main class="w-full max-w-lg bg-white rounded-lg shadow-lg p-8">
+      <h1 class="text-3xl font-extrabold text-center text-blue-600 mb-8">
+        JavaScript Repetition Logic
+      </h1>
+
+      <section class="space-y-8">
+        <div>
+          <label for="tableNum" class="block mb-1 font-semibold text-gray-700"
+            >Multiplication Table</label
+          >
+          <input
+            type="number"
+            id="tableNum"
+            placeholder="Enter a number (e.g. 5)"
+            class="w-full p-3 rounded border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none transition"
+          />
+          <p id="tableError" class="text-red-500 mt-1 text-sm hidden"></p>
+          <button
+            id="tableBtn"
+            class="mt-3 w-full bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 text-white py-3 rounded font-semibold transition"
+          >
+            Show Table
+          </button>
+        </div>
+
+        <div>
+          <label for="maxEven" class="block mb-1 font-semibold text-gray-700"
+            >Even Numbers</label
+          >
+          <input
+            type="number"
+            id="maxEven"
+            placeholder="Enter max number (e.g. 20)"
+            class="w-full p-3 rounded border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none transition"
+          />
+          <p id="evenError" class="text-red-500 mt-1 text-sm hidden"></p>
+          <button
+            id="evenBtn"
+            class="mt-3 w-full bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 text-white py-3 rounded font-semibold transition"
+          >
+            Show Even Numbers
+          </button>
+        </div>
+
+        <div class="flex space-x-4">
+          <button
+            id="exitBtn"
+            class="flex-1 bg-red-600 hover:bg-red-700 focus:ring-4 focus:ring-red-300 text-white py-3 rounded font-semibold transition"
+          >
+            Exit Program
+          </button>
+          <button
+            id="resetBtn"
+            class="flex-1 bg-green-600 hover:bg-green-700 focus:ring-4 focus:ring-green-300 text-white py-3 rounded font-semibold transition"
+          >
+            Reset Program
+          </button>
+        </div>
+      </section>
+
+      <div id="loadingSpinner" class="mt-6"></div>
+
+      <pre
+        id="output"
+        class="mt-6 p-4 bg-gray-100 rounded text-gray-900 font-mono text-sm"
+      >
+Output will appear here...
+    </pre
+      >
+    </main>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
