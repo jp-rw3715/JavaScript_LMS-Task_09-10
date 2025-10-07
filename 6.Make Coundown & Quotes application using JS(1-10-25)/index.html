@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Countdown & Floating Quote</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        background: linear-gradient(135deg, #15171d 0%, #2e1d39 100%);
+        min-height: 100vh;
+        perspective: 1200px;
+        overflow-x: hidden;
+      }
+      .glass-3d {
+        background: rgba(34, 41, 67, 0.72);
+        border-radius: 1.5rem;
+        border: 1.5px solid rgba(255, 255, 255, 0.09);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25),
+          0 1.5px 2.5px 0 rgba(86, 56, 255, 0.14) inset;
+        backdrop-filter: blur(8px);
+        transform-style: preserve-3d;
+        transition: box-shadow 0.3s, transform 0.4s;
+      }
+      .glass-3d:hover {
+        transform: translateY(-6px) rotateY(6deg) scale(1.03);
+        box-shadow: 0 16px 48px 0 rgba(86, 56, 255, 0.14),
+          0 2px 4px 0 rgba(210, 50, 255, 0.14) inset;
+      }
+      .timer-digits {
+        text-shadow: 0 6px 20px #5f7fff90, 0 1.5px 0 #fff6;
+        font-variant-numeric: tabular-nums;
+        letter-spacing: 0.02em;
+        font-family: "Orbitron", monospace;
+      }
+      .quote-card {
+        transform: rotateY(-12deg) skewY(-1deg);
+        background: linear-gradient(120deg, #38215e50 40%, #2bbbbb60 100%);
+        backdrop-filter: blur(6px);
+        border-radius: 2rem;
+        box-shadow: 0 12px 40px #0008, 0 2px 8px #27f7f511;
+        border: 1.5px solid #39fff7aa;
+        padding: 2.5rem 2rem;
+        color: #ecf6ee;
+        margin: 1rem 0;
+      }
+      .quote-animate {
+        animation: floatIn 1.1s cubic-bezier(0.15, 0.73, 0.27, 0.91);
+      }
+      @keyframes floatIn {
+        from {
+          transform: translateY(60px) scale(0.93) rotateY(-18deg);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0px) scale(1) rotateY(-12deg);
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body class="flex flex-col items-center justify-center py-10">
+    <header class="text-center mb-6">
+      <h1 class="text-4xl font-extrabold text-indigo-200 drop-shadow">
+        Countdown & Floating Quote
+      </h1>
+      <p class="font-medium text-lg text-cyan-200 mt-2">
+        Glass Timer and Motivational Quotes ✨
+      </p>
+    </header>
+    <main
+      class="flex flex-col md:flex-row items-stretch justify-center gap-8 w-full max-w-5xl mt-8"
+    >
+      <!-- 3D Timer -->
+      <section
+        class="flex-1 glass-3d flex flex-col items-center justify-between md:py-14 md:px-10 py-9 px-6 text-center relative"
+      >
+        <h2 class="text-[2rem] md:text-3xl text-indigo-200 font-bold mb-5">
+          ⏱️ 3D Countdown
+        </h2>
+        <div
+          id="cubeDigit"
+          class="my-4 text-7xl md:text-8xl text-cyan-300 font-black timer-digits transition-all duration-500"
+        >
+          00
+        </div>
+        <input
+          id="secSetter"
+          type="number"
+          step="1"
+          min="1"
+          placeholder="Set seconds"
+          class="w-full max-w-xs text-center mt-3 rounded-xl p-3 text-lg text-cyan-100 bg-[#23293cba] border-2 border-cyan-400 outline-none focus:ring-2 focus:ring-cyan-500 transition mb-5"
+        />
+        <div class="flex justify-center gap-3">
+          <button
+            id="launch"
+            class="bg-gradient-to-br from-indigo-500 via-purple-400 to-cyan-400 px-8 py-2 rounded-xl text-xl font-semibold text-white shadow-lg hover:scale-110 transition-transform"
+          >
+            Start
+          </button>
+          <button
+            id="halt"
+            class="bg-gradient-to-br from-gray-700 to-indigo-700 px-6 py-2 rounded-xl text-lg font-medium text-cyan-200 hover:bg-gray-900"
+          >
+            Pause
+          </button>
+        </div>
+        <div id="timerAlert" class="mt-7 h-7 text-cyan-300 text-base"></div>
+      </section>
+      <!-- Floating Quote Card -->
+      <section class="flex-1 flex flex-col items-center justify-center">
+        <div id="floatQuoteBox" class="quote-card quote-animate">
+          <span
+            id="floatedQuote"
+            class="block text-xl md:text-2xl italic min-h-[54px]"
+            >Loading inspirational quote...</span
+          >
+          <span
+            id="floatedAuthor"
+            class="block text-cyan-200 text-right mt-6 text-lg font-semibold"
+            >&ndash; Genius</span
+          >
+        </div>
+        <button
+          id="refreshFloatQuote"
+          class="mt-7 bg-gradient-to-r from-cyan-500 to-fuchsia-400 px-8 py-2 rounded-2xl text-white text-lg font-bold tracking-wide focus:outline-none hover:scale-105 transition-all shadow-md"
+        >
+          Next Quote
+        </button>
+      </section>
+    </main>
+    <footer
+      class="mt-14 py-5 w-full text-center text-cyan-300/70 border-t border-cyan-600 text-sm"
+    >
+      Crafted by
+      <span class="font-bold text-fuchsia-300">Patil Jayesh</span> 
+    </footer>
+
+    <!-- Script -->
+    <script src="./index.js"></script>
+  </body>
+</html>
